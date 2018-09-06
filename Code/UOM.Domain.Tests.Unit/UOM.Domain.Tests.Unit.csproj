@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Model\Dimensions\DimensionTests.cs" />
     <Compile Include="Model\UnitOfMeasures\Base\BaseUnitOfMeasureTests.cs" />
+    <Compile Include="Model\UnitOfMeasures\Scaled\ScaledUnitOfMeasureBuilder.cs" />
     <Compile Include="Model\UnitOfMeasures\Scaled\ScaledUnitOfMeasureTests.cs" />
     <Compile Include="Model\UnitOfMeasures\UnitOfMeasureTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

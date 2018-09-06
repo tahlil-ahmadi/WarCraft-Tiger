@@ -21,8 +21,14 @@ namespace UOM.Domain.Tests.Unit.Model.UnitOfMeasures.Scaled
             var isoCode = "KG";
             var baseIsoCode = "GR";
             var conversionFactor = 1000M;
+            var builder = new ScaledUnitOfMeasureBuilder()
+                .WithTitle(title)
+                .WithAlternateTitle(alternateTitle)
+                .WithIsoCode(isoCode)
+                .WithBaseIsoCode(baseIsoCode)
+                .WithConversionFactor(conversionFactor);
 
-            var scaledUnitOfMeasure = new ScaledUnitOfMeasure(isoCode, title, alternateTitle, baseIsoCode, conversionFactor);
+            var scaledUnitOfMeasure = builder.Build();            
 
             scaledUnitOfMeasure.Title.Should().Be(title);
             scaledUnitOfMeasure.AlternateTitle.Should().Be(alternateTitle);
