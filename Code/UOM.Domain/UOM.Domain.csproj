@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Dimensions\Dimension.cs" />
+    <Compile Include="Model\Dimensions\Exceptions\InvalidTitleException.cs" />
     <Compile Include="Model\UnitOfMeasures\Base\BaseUnitOfMeasure.cs" />
     <Compile Include="Model\UnitOfMeasures\Measurement.cs" />
     <Compile Include="Model\UnitOfMeasures\Scaled\ScaledUnitOfMeasure.cs" />
