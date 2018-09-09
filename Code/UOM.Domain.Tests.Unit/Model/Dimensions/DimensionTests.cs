@@ -8,6 +8,12 @@ namespace UOM.Domain.Tests.Unit.Model.Dimensions
 {
     public class DimensionTests
     {
+        private readonly DimensionTestBuilder dimensionTestBuilder;
+        public DimensionTests()
+        {
+            dimensionTestBuilder = new DimensionTestBuilder();
+        }
+
         [Fact]
         public void Constructor_should_construct_dimension_properly()
         {
@@ -15,23 +21,51 @@ namespace UOM.Domain.Tests.Unit.Model.Dimensions
             var altTitle = "طول";
             var symbol = "L";
 
-            var dimension = new Dimension(title, altTitle, symbol);
+            var dimension = dimensionTestBuilder.WithTitle(title)
+                                            .WithSymbol(symbol)
+                                            .WithAlternativeTitle(altTitle).Build();
 
-            dimension.Symbol.Should().Be(symbol);
-            dimension.Title.Should().Be(title);
-            dimension.AlternateTitle.Should().Be(altTitle);
+            dimension.Title.Should().Be(dimensionTestBuilder.Title);
+            dimension.AlternateTitle.Should().Be(dimensionTestBuilder.AlternateTitle);
+            dimension.Symbol.Should().Be(dimensionTestBuilder.Symbol);
+
         }
 
-        [Fact]
-        public void Constructor_should_throw_exception_when_title_is_null()
+        [Theory]
+        [InlineData("")]
+        [InlineData(" ")]
+        [InlineData(null)]
+        public void Constructor_should_throw_exception_when_title_is_null(string invalidTitle)
         {
-            var title = string.Empty;
+            var title = invalidTitle;
             var altTitle = "طول";
             var symbol = "L";
 
-            Action action = () => new Dimension(title, altTitle, symbol);
+            Action action = () => dimensionTestBuilder.WithTitle(title)
+                                                      .WithAlternativeTitle(altTitle)
+                                                      .WithSymbol(symbol)
+                                                      .Build(); 
 
             Assert.Throws<InvalidTitleException>(action);
         }
+
+        [Theory]
+        [InlineData("")]
+        [InlineData(" ")]
+        [InlineData(null)]
+        public void Constructor_should_throw_exception_when_symbol_is_null(string invalidSymbol)
+        {
+            var title = "Length";
+            var altTitle = "طول";
+            var symbol = invalidSymbol;
+
+            Action action = () => dimensionTestBuilder.WithTitle(title)
+                .WithAlternativeTitle(altTitle)
+                .WithSymbol(symbol)
+                .Build();
+
+            Assert.Throws<InvalidSymbolException>(action);
+        }
+
     }
 }
