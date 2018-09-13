@@ -63,7 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Dimensions\DimensionTestBuilder.cs" />
     <Compile Include="Model\Dimensions\DimensionTests.cs" />
+    <Compile Include="Model\UnitOfMeasures\Base\BaseUnitOfMeasureTestBuilder.cs" />
     <Compile Include="Model\UnitOfMeasures\Base\BaseUnitOfMeasureTests.cs" />
     <Compile Include="Model\UnitOfMeasures\Scaled\ScaledUnitOfMeasureBuilder.cs" />
     <Compile Include="Model\UnitOfMeasures\Scaled\ScaledUnitOfMeasureTests.cs" />
