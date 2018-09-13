@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EF5F5E4C-ECF4-4C39-8328-D9C53D94F82E}</ProjectGuid>
+    <ProjectGuid>{5B906387-2A34-484C-B244-F97341500B03}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UOM.Domain</RootNamespace>
-    <AssemblyName>UOM.Domain</AssemblyName>
+    <RootNamespace>UOM.Application</RootNamespace>
+    <AssemblyName>UOM.Application</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,17 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\MeasurementDimensions\IMeasurementDimensionRepository.cs" />
-    <Compile Include="Model\MeasurementDimensions\MeasurementDimension.cs" />
-    <Compile Include="Model\MeasurementDimensions\Exceptions\InvalidSymbolException.cs" />
-    <Compile Include="Model\MeasurementDimensions\Exceptions\InvalidTitleException.cs" />
-    <Compile Include="Model\UnitOfMeasures\Base\BaseUnitOfMeasure.cs" />
-    <Compile Include="Model\InvalidInputException.cs" />
-    <Compile Include="Model\UnitOfMeasures\Measurement.cs" />
-    <Compile Include="Model\UnitOfMeasures\Scaled\ScaledUnitOfMeasure.cs" />
-    <Compile Include="Model\UnitOfMeasures\UnitOfMeasure.cs" />
+    <Compile Include="MeasurementDimensionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\UOM.Application.Contracts\UOM.Application.Contracts.csproj">
+      <Project>{693336b7-66bf-477c-bdff-4f27260bf6df}</Project>
+      <Name>UOM.Application.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UOM.Domain\UOM.Domain.csproj">
+      <Project>{ef5f5e4c-ecf4-4c39-8328-d9c53d94f82e}</Project>
+      <Name>UOM.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
