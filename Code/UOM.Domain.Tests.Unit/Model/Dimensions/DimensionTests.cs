@@ -1,7 +1,6 @@
 ﻿using FluentAssertions;
 using System;
-using UOM.Domain.Model.Dimensions;
-using UOM.Domain.Model.Dimensions.Exceptions;
+using UOM.Domain.Model.MeasurementDimensions.Exceptions;
 using Xunit;
 
 namespace UOM.Domain.Tests.Unit.Model.Dimensions

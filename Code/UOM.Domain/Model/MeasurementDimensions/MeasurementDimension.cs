@@ -1,13 +1,13 @@
-﻿using UOM.Domain.Model.Dimensions.Exceptions;
+﻿using UOM.Domain.Model.MeasurementDimensions.Exceptions;
 
-namespace UOM.Domain.Model.Dimensions
+namespace UOM.Domain.Model.MeasurementDimensions
 {
-    public class Dimension
+    public class MeasurementDimension
     {
         public string Title { get; private set; }
         public string AlternateTitle { get;private  set; }
         public string Symbol { get;private  set; }
-        public Dimension(string title, string alternateTitle, string symbol)
+        public MeasurementDimension(string title, string alternateTitle, string symbol)
         {
             GaurdAgainstEmptyTitle(title);
             GuardAgainstEmptySymbol(symbol);

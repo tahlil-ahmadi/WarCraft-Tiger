@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using UOM.Domain.Model.Dimensions;
+using UOM.Domain.Model.MeasurementDimensions;
 
 namespace UOM.Domain.Tests.Unit.Model.Dimensions
 {
@@ -42,9 +42,9 @@ namespace UOM.Domain.Tests.Unit.Model.Dimensions
         }
 
 
-        public Dimension Build()
+        public MeasurementDimension Build()
         {
-            return new Dimension(this.Title, this.AlternateTitle, this.Symbol);
+            return new MeasurementDimension(this.Title, this.AlternateTitle, this.Symbol);
         }
 
 
