@@ -1,6 +1,6 @@
 ﻿namespace UOM.Application.Contracts
 {
-    public class CreateMeasurementDimensionDTO
+    public class CreateMeasurementDimensionCommand
     {
         public string Title { get; set; }
         public string AlternateTitle { get; set; }

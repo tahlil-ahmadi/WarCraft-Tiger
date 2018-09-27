@@ -7,6 +7,7 @@ using System.Web.Http.Dispatcher;
 using System.Web.Routing;
 using Castle.Windsor;
 using ServiceHost.App_Start;
+using TigerFramework.Castle;
 using UOM.Config.Castle;
 
 namespace ServiceHost
@@ -23,11 +24,11 @@ namespace ServiceHost
         private void WireUp()
         {
             var container = new WindsorContainer();
+            TigerBootstrapper.WireUp(container);
             UomBootstrapper.WireUp(container);
 
             GlobalConfiguration.Configuration
-                .Services.Replace(typeof(IHttpControllerActivator),
-                                new CastleControllerActivator(container));
+                               .Services.Replace(typeof(IHttpControllerActivator),new CastleControllerActivator(container));
         }
     }
 }

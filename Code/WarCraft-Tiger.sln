@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UOM", "UOM", "{3F9E850A-431A-429C-9FAD-402F198AD8DC}"
 EndProject
@@ -30,6 +30,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UOM.Config.Castle", "UOM.Config.Castle\UOM.Config.Castle.csproj", "{6AC6C993-401F-4750-8B59-32470A916E4C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{A9DC7052-5B7C-4528-A999-6E825FFB13F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{EDD9DB22-A2CA-4111-ABE3-0D32C31AE536}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerFramework.Application", "TigerFramework.Application\TigerFramework.Application.csproj", "{8866A6E8-34B1-4BDA-8AF4-4DE37C7251CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerFramework.Core", "TigerFramework.Core\TigerFramework.Core.csproj", "{6C2329EC-251B-45B6-B7C5-749C1DD92C05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerFramework.Castle", "TigerFramework.Castle\TigerFramework.Castle.csproj", "{F22A3011-C9AC-4A2F-9D5C-56A421E71B57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +77,18 @@ Global
 		{A9DC7052-5B7C-4528-A999-6E825FFB13F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9DC7052-5B7C-4528-A999-6E825FFB13F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9DC7052-5B7C-4528-A999-6E825FFB13F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8866A6E8-34B1-4BDA-8AF4-4DE37C7251CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8866A6E8-34B1-4BDA-8AF4-4DE37C7251CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8866A6E8-34B1-4BDA-8AF4-4DE37C7251CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8866A6E8-34B1-4BDA-8AF4-4DE37C7251CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C2329EC-251B-45B6-B7C5-749C1DD92C05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C2329EC-251B-45B6-B7C5-749C1DD92C05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C2329EC-251B-45B6-B7C5-749C1DD92C05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C2329EC-251B-45B6-B7C5-749C1DD92C05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F22A3011-C9AC-4A2F-9D5C-56A421E71B57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F22A3011-C9AC-4A2F-9D5C-56A421E71B57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F22A3011-C9AC-4A2F-9D5C-56A421E71B57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F22A3011-C9AC-4A2F-9D5C-56A421E71B57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,5 +106,8 @@ Global
 		{693336B7-66BF-477C-BDFF-4F27260BF6DF} = {384A5F68-2692-4B6D-BBD6-05DDCEF2FAB0}
 		{39F5F652-EDD5-4634-878C-CC2D655EAF14} = {3F9E850A-431A-429C-9FAD-402F198AD8DC}
 		{6AC6C993-401F-4750-8B59-32470A916E4C} = {39F5F652-EDD5-4634-878C-CC2D655EAF14}
+		{8866A6E8-34B1-4BDA-8AF4-4DE37C7251CE} = {EDD9DB22-A2CA-4111-ABE3-0D32C31AE536}
+		{6C2329EC-251B-45B6-B7C5-749C1DD92C05} = {EDD9DB22-A2CA-4111-ABE3-0D32C31AE536}
+		{F22A3011-C9AC-4A2F-9D5C-56A421E71B57} = {EDD9DB22-A2CA-4111-ABE3-0D32C31AE536}
 	EndGlobalSection
 EndGlobal

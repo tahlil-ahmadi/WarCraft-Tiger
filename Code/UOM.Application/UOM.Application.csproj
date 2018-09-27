@@ -40,10 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MeasurementDimensionService.cs" />
+    <Compile Include="MeasurementDimensionCommandHandlers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TigerFramework.Application\TigerFramework.Application.csproj">
+      <Project>{8866a6e8-34b1-4bda-8af4-4de37c7251ce}</Project>
+      <Name>TigerFramework.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UOM.Application.Contracts\UOM.Application.Contracts.csproj">
       <Project>{693336b7-66bf-477c-bdff-4f27260bf6df}</Project>
       <Name>UOM.Application.Contracts</Name>

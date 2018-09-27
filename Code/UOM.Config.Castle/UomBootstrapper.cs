@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
+using TigerFramework.Application;
 using UOM.Application;
 using UOM.Application.Contracts;
 using UOM.Domain.Model.MeasurementDimensions;
@@ -15,8 +16,10 @@ namespace UOM.Config.Castle
     {
         public static void WireUp(IWindsorContainer container)
         {
-            container.Register(Component.For<IMeasurementDimensionService>()
-                .ImplementedBy<MeasurementDimensionService>());
+            container.Register(Classes.FromAssemblyContaining<MeasurementDimensionCommandHandlers>()
+                .BasedOn(typeof(ICommandHandler<>))
+                .WithServiceAllInterfaces()
+                .LifestylePerWebRequest());
 
             container.Register(Component.For<IMeasurementDimensionRepository>()
                 .ImplementedBy<FakeRepository>());

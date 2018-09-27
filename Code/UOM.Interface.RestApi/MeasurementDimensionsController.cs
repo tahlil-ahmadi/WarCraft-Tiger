@@ -4,21 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using TigerFramework.Application;
 using UOM.Application.Contracts;
 
 namespace UOM.Interface.RestApi
 {
     public class MeasurementDimensionsController : ApiController
     {
-        private readonly IMeasurementDimensionService _service;
-        public MeasurementDimensionsController(IMeasurementDimensionService service)
+        private readonly ICommandBus _bus;
+        public MeasurementDimensionsController(ICommandBus bus)
         {
-            _service = service;
+            _bus = bus;
         }
 
-        public void Post(CreateMeasurementDimensionDTO dto)
+        public void Post(CreateMeasurementDimensionCommand command)
         {
-            _service.Create(dto);
+            _bus.Dispatch(command);
         }
     }
 }

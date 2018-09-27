@@ -58,6 +58,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TigerFramework.Application\TigerFramework.Application.csproj">
+      <Project>{8866A6E8-34B1-4BDA-8AF4-4DE37C7251CE}</Project>
+      <Name>TigerFramework.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UOM.Application.Contracts\UOM.Application.Contracts.csproj">
       <Project>{693336b7-66bf-477c-bdff-4f27260bf6df}</Project>
       <Name>UOM.Application.Contracts</Name>
