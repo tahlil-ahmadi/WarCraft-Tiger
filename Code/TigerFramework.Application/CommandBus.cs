@@ -13,8 +13,9 @@ namespace TigerFramework.Application
 
         public void Dispatch<T>(T command)
         {
-            var handler = _serviceLocator.GetInstance<ICommandHandler<T>>();
+            var handler = _serviceLocator.GetInstance<TransactionalCommandHandlerDecorator<T>>();
             handler.Handle(command);
+            _serviceLocator.Release(handler);
         }
     }
 }
