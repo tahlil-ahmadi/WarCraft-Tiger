@@ -14,8 +14,10 @@ namespace UOM.Application
 
         public void Handle(CreateMeasurementDimensionCommand command)
         {
+            //start transaction
             var measurementDimension = new MeasurementDimension(command.Title,command.AlternateTitle, command.Symbol);
             _repository.Add(measurementDimension);
+            //commit transaction
         }
     }
 }

@@ -19,6 +19,9 @@ namespace TigerFramework.Castle
 
             container.Register(Component.For<ICommandBus>()
                 .ImplementedBy<CommandBus>());
+
+            container.Register(Component.For(typeof(TransactionalCommandHandlerDecorator<>))
+                .LifestyleTransient());
         }
     }
 }
