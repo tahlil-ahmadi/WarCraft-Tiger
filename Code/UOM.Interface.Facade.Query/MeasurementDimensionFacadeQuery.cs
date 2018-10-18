@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
@@ -20,13 +21,15 @@ namespace UOM.Interface.Facade.Query
         //    this._connection = connection;
         //}
 
-        public MeasurementDimensionQuery GetBySymbol(string symbol)
+        public async Task<MeasurementDimensionQuery> GetBySymbol(string symbol)
         {
-            using (var connection = new SqlConnection(@"Data Source=CLASS1-TEACHER\MSSQLSERVER1;Initial Catalog=TigerDB;Integrated Security=True"))
+            //TODO: use castle windsor to inject the connection !
+            var connectionString = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
+            using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 var sql = "SELECT * from MeasurementDimensions WHERE Symbol=@sym";
-                var data =  connection.QueryFirstOrDefault<MeasurementDimensionQuery>(sql, new { sym = symbol });
+                var data =  await connection.QueryFirstOrDefaultAsync<MeasurementDimensionQuery>(sql, new { sym = symbol });
                 return data;
             }
         }

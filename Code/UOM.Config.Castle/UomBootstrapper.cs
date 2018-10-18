@@ -11,6 +11,8 @@ using UOM.Domain.Model.MeasurementDimensions;
 using UOM.Interface.Facade.Contracts;
 using UOM.Interface.Facade.Query;
 using UOM.Interface.RestApi;
+using UOM.Persistence.EF;
+using UOM.Persistence.EF.Repositories;
 
 namespace UOM.Config.Castle
 {
@@ -24,7 +26,10 @@ namespace UOM.Config.Castle
                 .LifestylePerWebRequest());
 
             container.Register(Component.For<IMeasurementDimensionRepository>()
-                .ImplementedBy<FakeRepository>());
+                .ImplementedBy<MeasurementDimensionRepository>()
+                .LifestylePerWebRequest());
+
+            container.Register(Component.For<UomContext>().LifestylePerWebRequest());
 
             container.Register(Component.For<MeasurementDimensionsController>()
                 .LifestylePerWebRequest());

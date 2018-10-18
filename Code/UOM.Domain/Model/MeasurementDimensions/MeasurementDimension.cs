@@ -4,9 +4,12 @@ namespace UOM.Domain.Model.MeasurementDimensions
 {
     public class MeasurementDimension
     {
+        public long Id { get; private set; }
         public string Title { get; private set; }
         public string AlternateTitle { get;private  set; }
         public string Symbol { get;private  set; }
+
+        protected MeasurementDimension(){}
         public MeasurementDimension(string title, string alternateTitle, string symbol)
         {
             GaurdAgainstEmptyTitle(title);

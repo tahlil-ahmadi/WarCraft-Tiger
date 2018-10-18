@@ -10,13 +10,14 @@ namespace UOM.Specs.Tasks
 {
    internal class MeasurementDimensionTasks
     {
-        internal bool DefineDimension(DimensionTestModel model)
+        internal void DefineDimension(DimensionTestModel model)
         {
             var client = new RestClient("http://localhost:29210/");
             var request = new RestRequest("api/MeasurementDimensions",Method.POST);
             request.AddJsonBody(model);
             var response = client.Execute(request);
-            return response.IsSuccessful;
+            if (!response.IsSuccessful)
+                throw new Exception(response.ErrorMessage);
         }
 
         internal DimensionTestModel GetDimension(string symbol)

@@ -55,6 +55,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UOM.Interface.Facade.Query"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UOM.Interface.Facade.Contracts", "UOM.Interface.Facade.Contracts\UOM.Interface.Facade.Contracts.csproj", "{028C6856-8A12-40B4-BC0A-7C2DE1BE3498}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UOM.Persistence.EF", "UOM.Persistence.EF\UOM.Persistence.EF.csproj", "{FAD64E8E-5269-4C38-953A-90A42DE44E85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -125,6 +127,10 @@ Global
 		{028C6856-8A12-40B4-BC0A-7C2DE1BE3498}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{028C6856-8A12-40B4-BC0A-7C2DE1BE3498}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{028C6856-8A12-40B4-BC0A-7C2DE1BE3498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAD64E8E-5269-4C38-953A-90A42DE44E85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAD64E8E-5269-4C38-953A-90A42DE44E85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAD64E8E-5269-4C38-953A-90A42DE44E85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAD64E8E-5269-4C38-953A-90A42DE44E85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -152,6 +158,7 @@ Global
 		{97A03980-A8DE-4F76-BB0B-D57D3E787856} = {39F5F652-EDD5-4634-878C-CC2D655EAF14}
 		{6C72FDD7-F080-407F-AE39-6EA6646374B1} = {86BBC9B5-DE2C-4771-8C06-2C5726D83D03}
 		{028C6856-8A12-40B4-BC0A-7C2DE1BE3498} = {86BBC9B5-DE2C-4771-8C06-2C5726D83D03}
+		{FAD64E8E-5269-4C38-953A-90A42DE44E85} = {39F5F652-EDD5-4634-878C-CC2D655EAF14}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0957BDD0-6724-47D5-B0CF-5B906287BC0D}

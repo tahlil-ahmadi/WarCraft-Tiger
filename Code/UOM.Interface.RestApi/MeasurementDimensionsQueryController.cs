@@ -18,9 +18,9 @@ namespace UOM.Interface.RestApi
         {
             this._query = query;
         }
-        public MeasurementDimensionQuery Get(string symbol)
+        public async Task<MeasurementDimensionQuery> Get(string symbol)
         {
-            return _query.GetBySymbol(symbol);
+            return await _query.GetBySymbol(symbol);
         }
     }
 }

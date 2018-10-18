@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FakeRepository.cs" />
     <Compile Include="UomBootstrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -86,6 +85,10 @@
     <ProjectReference Include="..\UOM.Interface.RestApi\UOM.Interface.RestApi.csproj">
       <Project>{0a0ee124-3a07-43db-8a1d-eaa13ad1a0fc}</Project>
       <Name>UOM.Interface.RestApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UOM.Persistence.EF\UOM.Persistence.EF.csproj">
+      <Project>{fad64e8e-5269-4c38-953a-90a42de44e85}</Project>
+      <Name>UOM.Persistence.EF</Name>
     </ProjectReference>
     <ProjectReference Include="..\UOM.QueryModel\UOM.QueryModel.csproj">
       <Project>{97a03980-a8de-4f76-bb0b-d57d3e787856}</Project>
