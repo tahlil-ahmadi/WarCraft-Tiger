@@ -18,5 +18,14 @@ namespace UOM.Specs.Tasks
             var response = client.Execute(request);
             return response.IsSuccessful;
         }
+
+        internal DimensionTestModel GetDimension(string symbol)
+        {
+            var client = new RestClient("http://localhost:29210/");
+            var request = new RestRequest("api/MeasurementDimensions");
+            request.AddParameter("symbol", symbol);
+            var response =  client.Execute<DimensionTestModel>(request);
+            return response.Data;
+        }
     }
 }

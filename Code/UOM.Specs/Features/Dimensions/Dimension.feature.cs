@@ -89,7 +89,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Title",
-                        "Title 2",
+                        "AlternateTitle",
                         "Symbol"});
             table1.AddRow(new string[] {
                         "Length",
@@ -101,36 +101,6 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I register the dimension", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
  testRunner.Then("the dimension should be appear in the list of dimensions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.FactAttribute(DisplayName="register a dimension with duplicate symbol")]
-        [Xunit.TraitAttribute("FeatureTitle", "Dimension")]
-        [Xunit.TraitAttribute("Description", "register a dimension with duplicate symbol")]
-        public virtual void RegisterADimensionWithDuplicateSymbol()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("register a dimension with duplicate symbol", null, ((string[])(null)));
-#line 13
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 14
- testRunner.Given("I have already registered a dimension with \'L\' symbol", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Title",
-                        "Title 2",
-                        "Symbol"});
-            table2.AddRow(new string[] {
-                        "Length",
-                        "طول",
-                        "L"});
-#line 15
- testRunner.And("I have defined a new dimension as following", ((string)(null)), table2, "And ");
-#line 18
- testRunner.When("I register the dimension", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 19
- testRunner.Then("the system should warned me that dimension is duplicated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

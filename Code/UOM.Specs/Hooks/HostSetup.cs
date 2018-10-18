@@ -10,18 +10,17 @@ namespace UOM.Specs.Hooks
     [Binding]
     public sealed class HostSetup
     {
-        // For additional details on SpecFlow hooks see http://go.specflow.org/doc-hooks
         private static IISExpressHost host;
         [BeforeTestRun]
-        public void BeforeTestSuiteRun()
+        public static void BeforeTestSuiteRun()
         {
-            var serviceHostPath = @"C:\Users\Mostafa\source\repos\WarCraft-Tiger2\Code\ServiceHost";
+            var serviceHostPath = @"C:\Courses\DDD-Tiger\Session13\WarCraft-Tiger\Code\ServiceHost";
             host = new IISExpressHost(serviceHostPath, 29210);
             host.Start();
         }
 
         [AfterTestRun]
-        public void AfterTestSuiteRun()
+        public static void AfterTestSuiteRun()
         {
             host.Stop();
         }

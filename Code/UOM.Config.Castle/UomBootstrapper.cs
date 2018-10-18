@@ -8,6 +8,8 @@ using TigerFramework.Application;
 using UOM.Application;
 using UOM.Application.Contracts;
 using UOM.Domain.Model.MeasurementDimensions;
+using UOM.Interface.Facade.Contracts;
+using UOM.Interface.Facade.Query;
 using UOM.Interface.RestApi;
 
 namespace UOM.Config.Castle
@@ -25,6 +27,12 @@ namespace UOM.Config.Castle
                 .ImplementedBy<FakeRepository>());
 
             container.Register(Component.For<MeasurementDimensionsController>()
+                .LifestylePerWebRequest());
+            container.Register(Component.For<MeasurementDimensionsQueryController>()
+                .LifestylePerWebRequest());
+
+            container.Register(Component.For<IMeasurementDimensionFacadeQuery>()
+                .Forward<MeasurementDimensionFacadeQuery>()
                 .LifestylePerWebRequest());
         }
     }

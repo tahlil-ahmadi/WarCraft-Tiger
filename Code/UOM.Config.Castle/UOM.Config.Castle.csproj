@@ -75,9 +75,21 @@
       <Project>{ef5f5e4c-ecf4-4c39-8328-d9c53d94f82e}</Project>
       <Name>UOM.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UOM.Interface.Facade.Contracts\UOM.Interface.Facade.Contracts.csproj">
+      <Project>{028c6856-8a12-40b4-bc0a-7c2de1be3498}</Project>
+      <Name>UOM.Interface.Facade.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UOM.Interface.Facade.Query\UOM.Interface.Facade.Query.csproj">
+      <Project>{6c72fdd7-f080-407f-ae39-6ea6646374b1}</Project>
+      <Name>UOM.Interface.Facade.Query</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UOM.Interface.RestApi\UOM.Interface.RestApi.csproj">
       <Project>{0a0ee124-3a07-43db-8a1d-eaa13ad1a0fc}</Project>
       <Name>UOM.Interface.RestApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UOM.QueryModel\UOM.QueryModel.csproj">
+      <Project>{97a03980-a8de-4f76-bb0b-d57d3e787856}</Project>
+      <Name>UOM.QueryModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

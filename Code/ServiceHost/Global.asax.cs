@@ -27,8 +27,10 @@ namespace ServiceHost
             TigerBootstrapper.WireUp(container);
             UomBootstrapper.WireUp(container);
 
-            GlobalConfiguration.Configuration
-                               .Services.Replace(typeof(IHttpControllerActivator),new CastleControllerActivator(container));
+            GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerActivator),
+                                new CastleControllerActivator(container));
+            GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerSelector),
+                            new CqrsControllerSelector(GlobalConfiguration.Configuration));
         }
     }
 }

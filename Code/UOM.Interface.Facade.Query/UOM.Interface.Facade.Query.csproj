@@ -4,14 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0A0EE124-3A07-43DB-8A1D-EAA13AD1A0FC}</ProjectGuid>
+    <ProjectGuid>{6C72FDD7-F080-407F-AE39-6EA6646374B1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UOM.Interface.RestApi</RootNamespace>
-    <AssemblyName>UOM.Interface.RestApi</AssemblyName>
+    <RootNamespace>UOM.Interface.Facade.Query</RootNamespace>
+    <AssemblyName>UOM.Interface.Facade.Query</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,20 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.6\lib\net45\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,31 +44,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MeasurementDimensionsQueryController.cs" />
-    <Compile Include="MeasurementDimensionsController.cs" />
+    <Compile Include="MeasurementDimensionFacadeQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TigerFramework.Application\TigerFramework.Application.csproj">
-      <Project>{8866a6e8-34b1-4bda-8af4-4de37c7251ce}</Project>
-      <Name>TigerFramework.Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UOM.Application.Contracts\UOM.Application.Contracts.csproj">
-      <Project>{693336b7-66bf-477c-bdff-4f27260bf6df}</Project>
-      <Name>UOM.Application.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\UOM.Interface.Facade.Contracts\UOM.Interface.Facade.Contracts.csproj">
-      <Project>{028c6856-8a12-40b4-bc0a-7c2de1be3498}</Project>
+      <Project>{028C6856-8A12-40B4-BC0A-7C2DE1BE3498}</Project>
       <Name>UOM.Interface.Facade.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\UOM.QueryModel\UOM.QueryModel.csproj">
-      <Project>{97A03980-A8DE-4F76-BB0B-D57D3E787856}</Project>
+      <Project>{97a03980-a8de-4f76-bb0b-d57d3e787856}</Project>
       <Name>UOM.QueryModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

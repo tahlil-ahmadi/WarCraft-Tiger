@@ -11,17 +11,16 @@ using UOM.QueryModel.Model;
 
 namespace UOM.Interface.RestApi
 {
-    public class MeasurementDimensionsController : ApiController
+    public class MeasurementDimensionsQueryController : ApiController
     {
-        private readonly ICommandBus _bus;
-        public MeasurementDimensionsController(ICommandBus bus)
+        private IMeasurementDimensionFacadeQuery _query;
+        public MeasurementDimensionsQueryController(IMeasurementDimensionFacadeQuery query)
         {
-            _bus = bus;
+            this._query = query;
         }
-
-        public void Post(CreateMeasurementDimensionCommand command)
+        public MeasurementDimensionQuery Get(string symbol)
         {
-            _bus.Dispatch(command);
+            return _query.GetBySymbol(symbol);
         }
     }
 }
