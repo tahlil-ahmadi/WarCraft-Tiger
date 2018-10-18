@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,9 @@ namespace UOM.Config.Castle
                 .ImplementedBy<MeasurementDimensionRepository>()
                 .LifestylePerWebRequest());
 
-            container.Register(Component.For<UomContext>().LifestylePerWebRequest());
+            container.Register(Component.For<UomContext>()
+                .Forward<DbContext>()
+                .LifestylePerWebRequest());
 
             container.Register(Component.For<MeasurementDimensionsController>()
                 .LifestylePerWebRequest());

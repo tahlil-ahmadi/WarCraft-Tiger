@@ -65,6 +65,10 @@
       <Project>{6c2329ec-251b-45b6-b7c5-749c1dd92c05}</Project>
       <Name>TigerFramework.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TigerFramework.EF\TigerFramework.EF.csproj">
+      <Project>{c3c12cd2-8d31-492b-a718-9bfa21430c72}</Project>
+      <Name>TigerFramework.EF</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

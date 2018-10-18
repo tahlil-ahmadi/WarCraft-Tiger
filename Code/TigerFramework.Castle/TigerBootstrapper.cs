@@ -7,6 +7,7 @@ using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using TigerFramework.Application;
 using TigerFramework.Core;
+using TigerFramework.EF;
 
 namespace TigerFramework.Castle
 {
@@ -19,6 +20,10 @@ namespace TigerFramework.Castle
 
             container.Register(Component.For<ICommandBus>()
                 .ImplementedBy<CommandBus>());
+
+            container.Register(Component.For<IUnitOfWork>()
+                .ImplementedBy<EfUnitOfWork>()
+                .LifestylePerWebRequest());
 
             container.Register(Component.For(typeof(TransactionalCommandHandlerDecorator<>))
                 .LifestyleTransient());
