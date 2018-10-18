@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +17,7 @@ namespace TigerFramework.Castle
 {
     public static class TigerBootstrapper
     {
-        public static void WireUp(IWindsorContainer container)
+        public static void WireUp(IWindsorContainer container, string connectionStringKey)
         {
             container.Register(Component.For<IServiceLocator>()
                 .UsingFactoryMethod(a=> new WindsorServiceLocatorAdapter(container)));
@@ -24,6 +28,18 @@ namespace TigerFramework.Castle
             container.Register(Component.For<IUnitOfWork>()
                 .ImplementedBy<EfUnitOfWork>()
                 .LifestylePerWebRequest());
+
+            container.Register(Component.For<IDbConnection>()
+                .Forward<DbConnection>().Forward<SqlConnection>()
+                .UsingFactoryMethod(a =>
+                {
+                    var connectionString = ConfigurationManager.ConnectionStrings[connectionStringKey].ConnectionString;
+                    var connection = new SqlConnection(connectionString);
+                    connection.Open();
+                    return connection;
+                })
+                .LifestylePerWebRequest()
+                .OnDestroy(a => a.Close()));
 
             container.Register(Component.For(typeof(TransactionalCommandHandlerDecorator<>))
                 .LifestyleTransient());

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -12,7 +14,7 @@ namespace UOM.Persistence.EF
     public class UomContext : DbContext
     {
         public DbSet<MeasurementDimension> MeasurementDimensions { get; set; }
-        public UomContext() : base("DBConnection")
+        public UomContext(DbConnection connection) : base(connection,false)
         {
             Database.SetInitializer<UomContext>(null);
             Configuration.LazyLoadingEnabled = false;

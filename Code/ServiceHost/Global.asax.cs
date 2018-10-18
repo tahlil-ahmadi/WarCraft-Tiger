@@ -24,7 +24,7 @@ namespace ServiceHost
         private void WireUp()
         {
             var container = new WindsorContainer();
-            TigerBootstrapper.WireUp(container);
+            TigerBootstrapper.WireUp(container,"DBConnection");
             UomBootstrapper.WireUp(container);
 
             GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerActivator),

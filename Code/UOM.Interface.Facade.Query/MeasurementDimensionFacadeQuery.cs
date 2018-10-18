@@ -15,23 +15,17 @@ namespace UOM.Interface.Facade.Query
 {
     public class MeasurementDimensionFacadeQuery : IMeasurementDimensionFacadeQuery
     {
-        //private IDbConnection _connection;
-        //public MeasurementDimensionFacadeQuery(IDbConnection connection)
-        //{
-        //    this._connection = connection;
-        //}
+        private readonly IDbConnection _connection;
+        public MeasurementDimensionFacadeQuery(IDbConnection connection)
+        {
+            this._connection = connection;
+        }
 
         public async Task<MeasurementDimensionQuery> GetBySymbol(string symbol)
         {
-            //TODO: use castle windsor to inject the connection !
-            var connectionString = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
-            using (var connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                var sql = "SELECT * from MeasurementDimensions WHERE Symbol=@sym";
-                var data =  await connection.QueryFirstOrDefaultAsync<MeasurementDimensionQuery>(sql, new { sym = symbol });
-                return data;
-            }
+            var sql = "SELECT * from MeasurementDimensions WHERE Symbol=@sym";
+            var data =  await _connection.QueryFirstOrDefaultAsync<MeasurementDimensionQuery>(sql, new { sym = symbol });
+            return data;
         }
     }
 }
