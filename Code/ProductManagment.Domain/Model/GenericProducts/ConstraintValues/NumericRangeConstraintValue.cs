@@ -1,12 +1,11 @@
 ﻿namespace ProductManagment.Domain.Model.GenericProducts.ConstraintValues
 {
-    public class NumericRangeConstraintValue
+    public class NumericRangeConstraintValue : ConstraintValue
     {
-        public int ConstraintId { get; }
         public Range Range { get; private set; }
         public NumericRangeConstraintValue(int constraintId, int? min, int? max)
+                :base(constraintId)
         {
-            ConstraintId = constraintId;
             this.Range = new Range(min,max);
         }
 

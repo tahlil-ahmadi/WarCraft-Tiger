@@ -1,11 +1,9 @@
 ﻿namespace ProductManagment.Domain.Model.GenericProducts.ConstraintValues
 {
-    public class BooleanConstraintValue
+    public class BooleanConstraintValue : ConstraintValue
     {
-        public int ConstraintId { get; }
-        public BooleanConstraintValue(int constraintId)
+        public BooleanConstraintValue(int constraintId) : base(constraintId)
         {
-            ConstraintId = constraintId;
         }
     }
 }

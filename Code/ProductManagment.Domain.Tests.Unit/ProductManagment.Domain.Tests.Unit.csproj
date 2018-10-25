@@ -66,11 +66,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BooleanConstraintValueTests.cs" />
-    <Compile Include="SelectiveConstraintValueTests.cs" />
-    <Compile Include="NumericRangeConstraintValueTests.cs" />
-    <Compile Include="GenericProductTests.cs" />
-    <Compile Include="ConstraintTests.cs" />
+    <Compile Include="Model\GenericProducts\GenericProductTests.cs" />
+    <Compile Include="Model\GenericProducts\ConstraintValues\BooleanConstraintValueTests.cs" />
+    <Compile Include="Model\GenericProducts\ConstraintValues\SelectiveConstraintValueTests.cs" />
+    <Compile Include="Model\GenericProducts\ConstraintValues\NumericRangeConstraintValueTests.cs" />
+    <Compile Include="Model\GenericProducts\ConstraintValues\GenericProductTests.cs" />
+    <Compile Include="Model\GenericProducts\ConstraintValues\ConstraintTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

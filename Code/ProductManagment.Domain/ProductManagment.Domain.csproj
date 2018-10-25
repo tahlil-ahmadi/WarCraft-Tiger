@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\GenericProducts\GenericProduct.cs" />
     <Compile Include="Model\GenericProducts\ConstraintValues\BooleanConstraintValue.cs" />
+    <Compile Include="Model\GenericProducts\ConstraintValues\ConstraintValue.cs" />
     <Compile Include="Model\GenericProducts\ConstraintValues\DuplicateOptionException.cs" />
     <Compile Include="Model\GenericProducts\ConstraintValues\Option.cs" />
     <Compile Include="Model\GenericProducts\ConstraintValues\Range.cs" />
