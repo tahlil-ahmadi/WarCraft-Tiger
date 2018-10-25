@@ -11,14 +11,20 @@ Scenario: Root Generic Product
 	| Guarantee  | Boolean      |                     |     |
 	| OS         | Selective    | IOS-Android-Symbian |     |
 	When I register the 'Mobile Phone'
-	Then It should be appear in ther list of products
+	Then It should be appear in the list of products
 
-	Scenario: Child Genric Product with limited constaints
-	Given I have a generic product called 'Smart Mobile Phone' with parent 'Mobile Phone'
+	Scenario: Child Generic Product with limited constaints
+	Given I have a generic product called 'Mobile Phone'
+	And 'Mobile Phone' has the following constraints
+	| Constraint | Type         | Value               | UOM |
+	| Weight     | NumericRange | 50-1000             | GR  |
+	| Guarantee  | Boolean      |                     |     |
+	| OS         | Selective    | IOS-Android-Symbian |     |
+	And I have a generic product called 'Smart Mobile Phone' with parent 'Mobile Phone'
 	And 'Smart Mobile Phone' has the following constraints
 	| Constraint | Type         | Value       | UOM |
 	| Weight     | NumericRange | 50-300      | GR  |
 	| Guarantee  | Boolean      |             |     |
 	| OS         | Selective    | IOS-Android |     |
 	When I register the 'Smart Mobile Phone'
-	Then It should be appear in the list of product 
+	Then It should be appear in the list of products

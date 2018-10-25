@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ProductMagment.Model")]
+[assembly: AssemblyTitle("ProductManagment.Domain")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ProductMagment.Model")]
+[assembly: AssemblyProduct("ProductManagment.Domain")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8fec78b0-197c-4927-bfaf-c612571e5ed0")]
+[assembly: Guid("ce320b1f-b047-4fc1-8206-aa33ad1aff0a")]
 
 // Version information for an assembly consists of the following four values:
 //

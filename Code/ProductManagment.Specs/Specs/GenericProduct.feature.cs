@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace ProductManagment.Specs
+namespace ProductManagment.Specs.Specs
 {
     using TechTalk.SpecFlow;
     
@@ -114,22 +114,22 @@ this.ScenarioInitialize(scenarioInfo);
 #line 13
  testRunner.When("I register the \'Mobile Phone\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
- testRunner.Then("It should be appear in ther list of products", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("It should be appear in the list of products", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Child Genric Product with limited constaints")]
+        [Xunit.FactAttribute(DisplayName="Child Generic Product with limited constaints")]
         [Xunit.TraitAttribute("FeatureTitle", "GenericProduct")]
-        [Xunit.TraitAttribute("Description", "Child Genric Product with limited constaints")]
-        public virtual void ChildGenricProductWithLimitedConstaints()
+        [Xunit.TraitAttribute("Description", "Child Generic Product with limited constaints")]
+        public virtual void ChildGenericProductWithLimitedConstaints()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Child Genric Product with limited constaints", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Child Generic Product with limited constaints", null, ((string[])(null)));
 #line 16
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 17
- testRunner.Given("I have a generic product called \'Smart Mobile Phone\' with parent \'Mobile Phone\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have a generic product called \'Mobile Phone\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Constraint",
@@ -139,7 +139,7 @@ this.ScenarioInitialize(scenarioInfo);
             table2.AddRow(new string[] {
                         "Weight",
                         "NumericRange",
-                        "50-300",
+                        "50-1000",
                         "GR"});
             table2.AddRow(new string[] {
                         "Guarantee",
@@ -149,14 +149,39 @@ this.ScenarioInitialize(scenarioInfo);
             table2.AddRow(new string[] {
                         "OS",
                         "Selective",
-                        "IOS-Android",
+                        "IOS-Android-Symbian",
                         ""});
 #line 18
- testRunner.And("\'Smart Mobile Phone\' has the following constraints", ((string)(null)), table2, "And ");
+ testRunner.And("\'Mobile Phone\' has the following constraints", ((string)(null)), table2, "And ");
 #line 23
- testRunner.When("I register the \'Smart Mobile Phone\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I have a generic product called \'Smart Mobile Phone\' with parent \'Mobile Phone\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Constraint",
+                        "Type",
+                        "Value",
+                        "UOM"});
+            table3.AddRow(new string[] {
+                        "Weight",
+                        "NumericRange",
+                        "50-300",
+                        "GR"});
+            table3.AddRow(new string[] {
+                        "Guarantee",
+                        "Boolean",
+                        "",
+                        ""});
+            table3.AddRow(new string[] {
+                        "OS",
+                        "Selective",
+                        "IOS-Android",
+                        ""});
 #line 24
- testRunner.Then("It should be appear in the list of product", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("\'Smart Mobile Phone\' has the following constraints", ((string)(null)), table3, "And ");
+#line 29
+ testRunner.When("I register the \'Smart Mobile Phone\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 30
+ testRunner.Then("It should be appear in the list of products", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
