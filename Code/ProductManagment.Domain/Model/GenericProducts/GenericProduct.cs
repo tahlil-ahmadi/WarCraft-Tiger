@@ -9,7 +9,7 @@ namespace ProductManagment.Domain.Model.GenericProducts
 {
     public class GenericProduct
     {
-        private List<ConstraintValue> _constraintValues;
+        private readonly List<ConstraintValue> _constraintValues;
 
         public int Id { get; }
         public string Title { get; }
