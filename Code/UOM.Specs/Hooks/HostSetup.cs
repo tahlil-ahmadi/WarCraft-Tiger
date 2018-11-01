@@ -10,19 +10,20 @@ namespace UOM.Specs.Hooks
     [Binding]
     public sealed class HostSetup
     {
-        private static IISExpressHost host;
+        private static IISExpressHost _host;
+
         [BeforeTestRun]
         public static void BeforeTestSuiteRun()
         {
             var serviceHostPath = @"C:\Courses\DDD-Tiger\Session13\WarCraft-Tiger\Code\ServiceHost";
-            host = new IISExpressHost(serviceHostPath, 29210);
-            host.Start();
+            _host = new IISExpressHost(serviceHostPath, 29210);
+            _host.Start();
         }
 
-        [AfterTestRun]
+        [BeforeScenario]
         public static void AfterTestSuiteRun()
         {
-            host.Stop();
+            _host.Stop();
         }
     }
 }

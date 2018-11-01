@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProductManagment.Domain.Model.GenericProducts.ConstraintValues
+﻿namespace ProductManagment.Domain.Model.Products.GenericProducts.ConstraintValues
 {
     public abstract class ConstraintValue
     {

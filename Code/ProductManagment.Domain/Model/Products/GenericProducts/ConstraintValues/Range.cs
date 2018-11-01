@@ -1,6 +1,8 @@
-﻿namespace ProductManagment.Domain.Model.GenericProducts.ConstraintValues
+﻿using TigerFramework.Domain;
+
+namespace ProductManagment.Domain.Model.Products.GenericProducts.ConstraintValues
 {
-    public class Range
+    public class Range : ValueObject
     {
         public long? Min { get; private set; }
         public long? Max { get; private set; }

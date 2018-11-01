@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using ProductManagment.Domain.Model.GenericProducts.ConstraintValues;
+using ProductManagment.Domain.Model.Products.GenericProducts.ConstraintValues;
 using Xunit;
 
 namespace ProductManagment.Domain.Tests.Unit

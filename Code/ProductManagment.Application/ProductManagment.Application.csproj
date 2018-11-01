@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6C2329EC-251B-45B6-B7C5-749C1DD92C05}</ProjectGuid>
+    <ProjectGuid>{5DEFE42D-F102-4618-A0D9-073F717281BC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TigerFramework.Core</RootNamespace>
-    <AssemblyName>TigerFramework.Core</AssemblyName>
+    <RootNamespace>ProductManagment.Application</RootNamespace>
+    <AssemblyName>ProductManagment.Application</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,20 +41,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EqualityHelpers\BitConverterUtil.cs" />
-    <Compile Include="EqualityHelpers\EqualsBuilder.cs" />
-    <Compile Include="EqualityHelpers\HashCodeBuilder.cs" />
-    <Compile Include="EqualityHelpers\MathUtil.cs" />
-    <Compile Include="IUnitOfWork.cs" />
-    <Compile Include="IServiceLocator.cs" />
+    <Compile Include="ConstraintFactory.cs" />
+    <Compile Include="ProductCommandHandlers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProductManagment.Application.Contracts\ProductManagment.Application.Contracts.csproj">
+      <Project>{4aad7b5e-2381-4ad5-9729-76288dab1dd7}</Project>
+      <Name>ProductManagment.Application.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProductManagment.Domain\ProductManagment.Domain.csproj">
+      <Project>{CE320B1F-B047-4FC1-8206-AA33AD1AFF0A}</Project>
+      <Name>ProductManagment.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TigerFramework.Application\TigerFramework.Application.csproj">
+      <Project>{8866A6E8-34B1-4BDA-8AF4-4DE37C7251CE}</Project>
+      <Name>TigerFramework.Application</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

@@ -115,6 +115,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ProductManagment.Config.Castle\ProductManagment.Config.Castle.csproj">
+      <Project>{FB9F6B00-EDAD-4D01-8323-25EB2ADEB72F}</Project>
+      <Name>ProductManagment.Config.Castle</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TigerFramework.Castle\TigerFramework.Castle.csproj">
       <Project>{f22a3011-c9ac-4a2f-9d5c-56a421e71b57}</Project>
       <Name>TigerFramework.Castle</Name>

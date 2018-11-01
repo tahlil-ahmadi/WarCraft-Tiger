@@ -108,19 +108,19 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
  testRunner.And("I have already registered a scaled uom as following", ((string)(null)), table2, "And ");
 #line 10
- testRunner.When("I try to covert \'200\' \'GR\' to \'KG\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I try to convert \'200\' \'GR\' to \'KG\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
  testRunner.Then("The result should be \'0.2\' \'KG\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Converting scalsed to another scaled unit of measure")]
+        [Xunit.FactAttribute(DisplayName="Converting scaled to another scaled unit of measure")]
         [Xunit.TraitAttribute("FeatureTitle", "Converting unit of measures")]
-        [Xunit.TraitAttribute("Description", "Converting scalsed to another scaled unit of measure")]
-        public virtual void ConvertingScalsedToAnotherScaledUnitOfMeasure()
+        [Xunit.TraitAttribute("Description", "Converting scaled to another scaled unit of measure")]
+        public virtual void ConvertingScaledToAnotherScaledUnitOfMeasure()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Converting scalsed to another scaled unit of measure", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Converting scaled to another scaled unit of measure", null, ((string[])(null)));
 #line 13
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -160,7 +160,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 20
  testRunner.And("I have already registered a scaled uom as following", ((string)(null)), table5, "And ");
 #line 23
- testRunner.When("I try to covert \'1000\' \'KG\' to \'HK\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I try to convert \'1000\' \'KG\' to \'HK\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
  testRunner.Then("The result should be \'0.01\' \'HK\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

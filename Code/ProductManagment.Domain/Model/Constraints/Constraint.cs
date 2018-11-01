@@ -1,8 +1,9 @@
-﻿namespace ProductManagment.Domain.Model.Constraints
+﻿using TigerFramework.Domain;
+
+namespace ProductManagment.Domain.Model.Constraints
 {
-    public class Constraint
+    public class Constraint : AggregateRoot<int>
     {
-        public int Id { get; }
         public string Title { get; }
         public Constraint(int id, string title)
         {

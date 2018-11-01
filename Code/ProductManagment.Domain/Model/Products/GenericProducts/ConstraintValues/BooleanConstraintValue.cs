@@ -1,4 +1,4 @@
-﻿namespace ProductManagment.Domain.Model.GenericProducts.ConstraintValues
+﻿namespace ProductManagment.Domain.Model.Products.GenericProducts.ConstraintValues
 {
     public class BooleanConstraintValue : ConstraintValue
     {

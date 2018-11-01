@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace ProductManagment.Domain.Model.GenericProducts.ConstraintValues
+namespace ProductManagment.Domain.Model.Products.GenericProducts.ConstraintValues
 {
     public class SelectiveConstraintValue : ConstraintValue
 

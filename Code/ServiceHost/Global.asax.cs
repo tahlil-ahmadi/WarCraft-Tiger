@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Http.Dispatcher;
 using System.Web.Routing;
 using Castle.Windsor;
+using ProductManagment.Config.Castle;
 using ServiceHost.App_Start;
 using TigerFramework.Castle;
 using UOM.Config.Castle;
@@ -26,6 +27,7 @@ namespace ServiceHost
             var container = new WindsorContainer();
             TigerBootstrapper.WireUp(container,"DBConnection");
             UomBootstrapper.WireUp(container);
+            ProductManagementBootstrapper.WireUp(container);
 
             GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerActivator),
                                 new CastleControllerActivator(container));

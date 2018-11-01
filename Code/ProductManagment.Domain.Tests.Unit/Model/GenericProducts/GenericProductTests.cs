@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
-using ProductManagment.Domain.Model.GenericProducts;
-using ProductManagment.Domain.Model.GenericProducts.ConstraintValues;
+using ProductManagment.Domain.Model.Products.GenericProducts;
+using ProductManagment.Domain.Tests.Unit.Utils;
 using Xunit;
 
 namespace ProductManagment.Domain.Tests.Unit.Model.GenericProducts
@@ -17,7 +17,7 @@ namespace ProductManagment.Domain.Tests.Unit.Model.GenericProducts
         {
             var id = 10;
             var title = "Mobile Phone";
-            var constraintValues = SomeConstraintValues();
+            var constraintValues = ConstraintValueTestFactory.SomeValidConstraintValues();
 
             var genericProduct = new GenericProduct(id, title, constraintValues);
 
@@ -26,15 +26,16 @@ namespace ProductManagment.Domain.Tests.Unit.Model.GenericProducts
             genericProduct.ConstraintValues.Should().BeEquivalentTo(constraintValues);
         }
 
-        //Anonymous Creation Method
-        private List<ConstraintValue> SomeConstraintValues()
+        [Fact]
+        public void Should_throw_exception_when_constraint_is_duplicated()
         {
-            //TODO: move to a test util
-            return new List<ConstraintValue>()
-            {
-                new BooleanConstraintValue(1),
-                new NumericRangeConstraintValue(2,20,30)
-            };
+            var id = 10;
+            var title = "Mobile Phone";
+            var constraintValues = ConstraintValueTestFactory.SomeDuplicateConstraintValues();
+
+            Action constructor = ()=> new GenericProduct(id, title, constraintValues);
+
+            constructor.Should().Throw<DuplicateConstraintException>();
         }
     }
 }

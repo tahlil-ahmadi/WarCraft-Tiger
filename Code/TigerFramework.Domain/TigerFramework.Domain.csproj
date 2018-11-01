@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6C2329EC-251B-45B6-B7C5-749C1DD92C05}</ProjectGuid>
+    <ProjectGuid>{6139A87E-96B4-4D03-974D-2ACB6B874AAC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TigerFramework.Core</RootNamespace>
-    <AssemblyName>TigerFramework.Core</AssemblyName>
+    <RootNamespace>TigerFramework.Domain</RootNamespace>
+    <AssemblyName>TigerFramework.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,20 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EqualityHelpers\BitConverterUtil.cs" />
-    <Compile Include="EqualityHelpers\EqualsBuilder.cs" />
-    <Compile Include="EqualityHelpers\HashCodeBuilder.cs" />
-    <Compile Include="EqualityHelpers\MathUtil.cs" />
-    <Compile Include="IUnitOfWork.cs" />
-    <Compile Include="IServiceLocator.cs" />
+    <Compile Include="AggregateRoot.cs" />
+    <Compile Include="ValueObject.cs" />
+    <Compile Include="Entity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TigerFramework.Core\TigerFramework.Core.csproj">
+      <Project>{6C2329EC-251B-45B6-B7C5-749C1DD92C05}</Project>
+      <Name>TigerFramework.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
