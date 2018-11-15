@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F22A3011-C9AC-4A2F-9D5C-56A421E71B57}</ProjectGuid>
+    <ProjectGuid>{CF3E7A8B-4BFF-4829-B5A1-EEA31CBB33A2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TigerFramework.Castle</RootNamespace>
-    <AssemblyName>TigerFramework.Castle</AssemblyName>
+    <RootNamespace>TigerFramework.Core.SeriLog</RootNamespace>
+    <AssemblyName>TigerFramework.Core.SeriLog</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,23 +30,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castle.Core.4.2.0\lib\net45\Castle.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\packages\Serilog.2.7.1\lib\net46\Serilog.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.3.2.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.RollingFile, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.RollingFile.3.3.0\lib\net45\Serilog.Sinks.RollingFile.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Remoting" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,26 +52,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TigerBootstrapper.cs" />
-    <Compile Include="WindsorServiceLocatorAdapter.cs" />
+    <Compile Include="SeriLogFactory.cs" />
+    <Compile Include="SerilogAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TigerFramework.Application\TigerFramework.Application.csproj">
-      <Project>{8866a6e8-34b1-4bda-8af4-4de37c7251ce}</Project>
-      <Name>TigerFramework.Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TigerFramework.Core.SeriLog\TigerFramework.Core.SeriLog.csproj">
-      <Project>{CF3E7A8B-4BFF-4829-B5A1-EEA31CBB33A2}</Project>
-      <Name>TigerFramework.Core.SeriLog</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TigerFramework.Core\TigerFramework.Core.csproj">
       <Project>{6c2329ec-251b-45b6-b7c5-749c1dd92c05}</Project>
       <Name>TigerFramework.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TigerFramework.EF\TigerFramework.EF.csproj">
-      <Project>{c3c12cd2-8d31-492b-a718-9bfa21430c72}</Project>
-      <Name>TigerFramework.EF</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

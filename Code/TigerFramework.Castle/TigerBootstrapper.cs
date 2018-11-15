@@ -12,6 +12,8 @@ using Castle.Windsor;
 using TigerFramework.Application;
 using TigerFramework.Core;
 using TigerFramework.EF;
+using TigerFramework.Core.SeriLog;
+using TigerFramework.Core.Logging;
 
 namespace TigerFramework.Castle
 {
@@ -43,6 +45,16 @@ namespace TigerFramework.Castle
 
             container.Register(Component.For(typeof(TransactionalCommandHandlerDecorator<>))
                 .LifestyleTransient());
+
+            SetupLogger(container);
+        }
+
+        private static void SetupLogger(IWindsorContainer container)
+        {
+            //TODO: don't hard-wire the seriLog here !
+            var adapter = new SerilogAdapter(SeriLogFactory.Create());
+            container.Register(Component.For<ILogger>().Instance(adapter).LifestyleSingleton());
+            Logger.SetCurrent(adapter);
         }
     }
 }
