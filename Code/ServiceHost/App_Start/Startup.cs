@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Dispatcher;
 using Castle.Windsor;
+using IdentityServer3.AccessTokenValidation;
 using Microsoft.Owin;
 using Owin;
 using ProductManagment.Config.Castle;
@@ -18,10 +19,10 @@ namespace ServiceHost.App_Start
         {
             var config = new HttpConfiguration();
             WebApiConfig.Register(config);
+            SetupAccessTokenValidation(app);
             WireUp(config);
             app.UseWebApi(config);
         }
-
         private void WireUp(HttpConfiguration config)
         {
             var container = new WindsorContainer();
@@ -32,5 +33,14 @@ namespace ServiceHost.App_Start
             config.Services.Replace(typeof(IHttpControllerActivator),new CastleControllerActivator(container));
             config.Services.Replace(typeof(IHttpControllerSelector),new CqrsControllerSelector(config));
         }
+
+        private void SetupAccessTokenValidation(IAppBuilder app)
+        {
+            app.UseIdentityServerBearerTokenAuthentication(new IdentityServerBearerTokenAuthenticationOptions
+            {
+                Authority = "http://localhost:5000",
+            });
+        }
+
     }
 }

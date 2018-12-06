@@ -25,6 +25,7 @@ namespace UOM.Interface.RestApi
 
         public async Task<IEnumerable<MeasurementDimensionQuery>> GetAll()
         {
+            var user = this.User;
             return await _query.GetAll();
         }
     }
