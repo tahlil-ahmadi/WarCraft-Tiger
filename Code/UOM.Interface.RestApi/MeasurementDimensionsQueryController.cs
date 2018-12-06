@@ -22,5 +22,10 @@ namespace UOM.Interface.RestApi
         {
             return await _query.GetBySymbol(symbol);
         }
+
+        public async Task<IEnumerable<MeasurementDimensionQuery>> GetAll()
+        {
+            return await _query.GetAll();
+        }
     }
 }

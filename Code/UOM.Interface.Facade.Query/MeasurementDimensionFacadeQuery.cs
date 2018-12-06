@@ -24,8 +24,13 @@ namespace UOM.Interface.Facade.Query
         public async Task<MeasurementDimensionQuery> GetBySymbol(string symbol)
         {
             var sql = "SELECT * from MeasurementDimensions WHERE Symbol=@sym";
-            var data =  await _connection.QueryFirstOrDefaultAsync<MeasurementDimensionQuery>(sql, new { sym = symbol });
-            return data;
+            return await _connection.QueryFirstOrDefaultAsync<MeasurementDimensionQuery>(sql, new { sym = symbol });
+        }
+
+        public async Task<IEnumerable<MeasurementDimensionQuery>> GetAll()
+        {
+            var sql = "SELECT * from MeasurementDimensions";
+            return await _connection.QueryAsync<MeasurementDimensionQuery>(sql);
         }
     }
 }
